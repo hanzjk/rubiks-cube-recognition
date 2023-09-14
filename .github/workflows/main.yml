@@ -1,0 +1,26 @@
+name: Bitbucket Checkout Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: List Workspace Directory Contents
+        run: | 
+              echo "Workspace directory is ${{ github.workspace }}" 
+              ls -al "${{ github.workspace }}"
+
+      - name: Checkout code from Bitbucket
+        uses: choreo-templates/bitbucket-checkout@v0.1.0
+        with:
+          token: "ATBBXhsLxcHMvhLRk9aMCPLmTQa671FF80EC"
+          username: "hanzjk"
+          userOrgName: "hanzjk"
+          userRepoName: "bal-code"
+          configRepoName: "TestDev"
+          branch: "main"
+          commitUser: "choreo-bot"
+          commitEmail: "hansijk@yahoo.com"
