@@ -10,8 +10,7 @@ jobs:
     steps:
       - name: List Workspace Directory Contents
         run: | 
-              echo "Workspace directory is ${{ github.workspace }}" 
-              ls -al "${{ github.workspace }}"
+              ls -R
 
       - name: Checkout code from Bitbucket
         uses: choreo-templates/bitbucket-checkout@v0.1.0
